@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './index.css';
 import Listitems from "./listitems";
-import Category from "./Category";
+import Category from "./category";
 class App extends Component {
     constructor(props) {
         super(props);

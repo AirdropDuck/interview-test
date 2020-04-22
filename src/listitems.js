@@ -1,20 +1,33 @@
 import React, { Component } from "react";
 
-class Item extends Component {
-    createTasks(item) {
-        return <li key={item.key}>{item.text}</li>
+class Listitems extends Component {
+
+    createItems(item) {
+        return <tr>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                    <td>{item.quantity}</td>
+                </tr>
     }
 
     render() {
-        var todoEntries = this.props.entries;
-        var listItems = todoEntries.map(this.createTasks);
-
+        var entries = this.props.entries;
+        var listItems = entries.map(this.createItems);
         return (
-            <ul className="theList">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>quantity</th>
+                </tr>
+                </thead>
+                <tbody>
                 {listItems}
-            </ul>
+                </tbody>
+            </table>
         );
     }
 };
 
-export default TodoItems;
+export default Listitems;
